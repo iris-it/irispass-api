@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\User;
+use Illuminate\Support\Facades\Log;
+use Irisit\IrispassShared\Model\User;
 use Dingo\Api\Routing\Helpers;
 use Firebase\JWT\JWT;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class UserController extends Controller
     public function getCurrentUser(Request $request)
     {
 
-        JWT::$leeway = 10;
+        JWT::$leeway = 1000;
 
         $payload = JWT::decode($request->bearerToken(), config('jwt.keys.public'), array('RS256'));
 
@@ -32,7 +33,9 @@ class UserController extends Controller
 
         ];
 
-        $user = User::find($payload->sub);
+        $user = User::where('sub', $payload->sub)->first();
+
+        Log::error($user);
 
         if ($user) {
             $user->update($data);
@@ -42,6 +45,8 @@ class UserController extends Controller
         }
 
         $user = JWTAuth::parseToken()->authenticate();
+
+        Log::error($user);
 
         return $this->response->array($user->toArray());
 

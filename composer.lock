@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8562237372af6c570bedfb9d38f95e40",
-    "content-hash": "71182765464f163436134b8850a919d3",
+    "hash": "61c95df9e51cbc04278e256d7b7c1f26",
+    "content-hash": "96cb3aa7242c83aeead5f4729b5de733",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -457,6 +457,45 @@
             "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
             "homepage": "https://github.com/firebase/php-jwt",
             "time": "2015-07-22 18:31:08"
+        },
+        {
+            "name": "iris-it/irispass-shared",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/iris-it/irispass-shared.git",
+                "reference": "16a8d7e9584ed7a3f8887e0d02e5a8ab8807f620"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/iris-it/irispass-shared/zipball/16a8d7e9584ed7a3f8887e0d02e5a8ab8807f620",
+                "reference": "16a8d7e9584ed7a3f8887e0d02e5a8ab8807f620",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Irisit\\IrispassShared\\": "src/"
+                }
+            },
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "Alexandre",
+                    "email": "alexandre.mangin@viacesi.fr"
+                }
+            ],
+            "description": "Shared models / services",
+            "support": {
+                "source": "https://github.com/iris-it/irispass-shared/tree/master",
+                "issues": "https://github.com/iris-it/irispass-shared/issues"
+            },
+            "time": "2016-06-23 22:24:24"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -3498,7 +3537,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "dingo/api": 10,
-        "tymon/jwt-auth": 15
+        "tymon/jwt-auth": 15,
+        "iris-it/irispass-shared": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

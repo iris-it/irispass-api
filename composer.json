@@ -4,12 +4,19 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/iris-it/irispass-shared"
+        }
+    ],
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
         "dingo/api": "v1.0.0-beta3",
         "tymon/jwt-auth": "^1.0.0-alpha.2",
-        "firebase/php-jwt": "^3.0"
+        "firebase/php-jwt": "^3.0",
+        "iris-it/irispass-shared": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
