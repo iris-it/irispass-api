@@ -3,17 +3,13 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Log;
 use Irisit\IrispassShared\Model\User;
-use Dingo\Api\Routing\Helpers;
 use Firebase\JWT\JWT;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
 class UserController extends Controller
 {
-
-    use Helpers;
 
     public function getCurrentUser(Request $request)
     {
@@ -35,18 +31,15 @@ class UserController extends Controller
 
         $user = User::where('sub', $payload->sub)->first();
 
-        Log::error($user);
-
-        if ($user) {
-            $user->update($data);
-        } else {
-            $data['settings'] = json_encode([]);
-            User::create($data);
+        if (!$user) {
+            $this->response->errorUnauthorized('Aucun compte n\'est trouvé');
         }
 
-        $user = JWTAuth::parseToken()->authenticate();
+        $user->update($data);
 
-        Log::error($user);
+        $user->provider()->update(['access_token' => $request->bearerToken()]);
+
+        $user = JWTAuth::parseToken()->authenticate();
 
         return $this->response->array($user->toArray());
 

@@ -32,6 +32,8 @@ $api->version('v1', function ($api) {
 
             $api->put('settings', 'UserController@updateSettings');
 
+            $api->post('vfs/update', 'VfsController@handleRequests');
+
         });
     });
 });

@@ -459,21 +459,194 @@
             "time": "2015-07-22 18:31:08"
         },
         {
+            "name": "guzzlehttp/guzzle",
+            "version": "6.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "d094e337976dff9d8e2424e8485872194e768662"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/d094e337976dff9d8e2424e8485872194e768662",
+                "reference": "d094e337976dff9d8e2424e8485872194e768662",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/promises": "~1.0",
+                "guzzlehttp/psr7": "~1.1",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "phpunit/phpunit": "~4.0",
+                "psr/log": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.2-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions_include.php"
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2016-03-21 20:02:09"
+        },
+        {
+            "name": "guzzlehttp/promises",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/promises.git",
+                "reference": "c10d860e2a9595f8883527fa0021c7da9e65f579"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/c10d860e2a9595f8883527fa0021c7da9e65f579",
+                "reference": "c10d860e2a9595f8883527fa0021c7da9e65f579",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle promises library",
+            "keywords": [
+                "promise"
+            ],
+            "time": "2016-05-18 16:56:05"
+        },
+        {
+            "name": "guzzlehttp/psr7",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/psr7.git",
+                "reference": "5c6447c9df362e8f8093bda8f5d8873fe5c7f65b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/5c6447c9df362e8f8093bda8f5d8873fe5c7f65b",
+                "reference": "5c6447c9df362e8f8093bda8f5d8873fe5c7f65b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "PSR-7 message implementation",
+            "keywords": [
+                "http",
+                "message",
+                "stream",
+                "uri"
+            ],
+            "time": "2016-06-24 23:00:38"
+        },
+        {
             "name": "iris-it/irispass-shared",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iris-it/irispass-shared.git",
-                "reference": "16a8d7e9584ed7a3f8887e0d02e5a8ab8807f620"
+                "reference": "a123b51f82e9908cbaf6a1cb0e9c0c0abd5bd6d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/iris-it/irispass-shared/zipball/16a8d7e9584ed7a3f8887e0d02e5a8ab8807f620",
-                "reference": "16a8d7e9584ed7a3f8887e0d02e5a8ab8807f620",
+                "url": "https://api.github.com/repos/iris-it/irispass-shared/zipball/a123b51f82e9908cbaf6a1cb0e9c0c0abd5bd6d2",
+                "reference": "a123b51f82e9908cbaf6a1cb0e9c0c0abd5bd6d2",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "5.2.*"
+                "guzzlehttp/guzzle": "~6.0",
+                "laravel/framework": "5.2.*",
+                "league/flysystem-ziparchive": "^1.0"
             },
             "type": "library",
             "autoload": {
@@ -495,7 +668,7 @@
                 "source": "https://github.com/iris-it/irispass-shared/tree/master",
                 "issues": "https://github.com/iris-it/irispass-shared/issues"
             },
-            "time": "2016-06-23 22:24:24"
+            "time": "2016-06-26 01:25:12"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -853,6 +1026,52 @@
                 "storage"
             ],
             "time": "2016-06-03 19:11:39"
+        },
+        {
+            "name": "league/flysystem-ziparchive",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/flysystem-ziparchive.git",
+                "reference": "ab2e804c6c121e30f8ccb0c996bf418c3c8ccab8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/flysystem-ziparchive/zipball/ab2e804c6c121e30f8ccb0c996bf418c3c8ccab8",
+                "reference": "ab2e804c6c121e30f8ccb0c996bf418c3c8ccab8",
+                "shasum": ""
+            },
+            "require": {
+                "league/flysystem": "~1.0@alpha",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Flysystem\\ZipArchive\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frenky.net"
+                }
+            ],
+            "description": "Flysystem adapter for ZipArchive's",
+            "time": "2015-04-21 12:14:28"
         },
         {
             "name": "league/fractal",
@@ -1296,6 +1515,55 @@
                 }
             ],
             "time": "2015-02-03 12:10:50"
+        },
+        {
+            "name": "psr/http-message",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "85d63699f0dbedb190bbd4b0d2b9dc707ea4c298"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/85d63699f0dbedb190bbd4b0d2b9dc707ea4c298",
+                "reference": "85d63699f0dbedb190bbd4b0d2b9dc707ea4c298",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "time": "2015-05-04 20:22:00"
         },
         {
             "name": "psr/log",
