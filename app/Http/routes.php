@@ -32,6 +32,8 @@ $api->version('v1', function ($api) {
 
             $api->put('settings', 'UserController@updateSettings');
 
+            $api->get('me/groups', 'UserController@getUserGroups');
+
             $api->any('filesystem/{mount}/{method}', 'FileSystemController@handleRequests');
 
         });

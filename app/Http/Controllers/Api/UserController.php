@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Irisit\IrispassShared\Model\User;
 use Firebase\JWT\JWT;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Irisit\IrispassShared\Model\User;
+use Irisit\IrispassShared\Model\UserGroup;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
 class UserController extends Controller
@@ -53,6 +56,22 @@ class UserController extends Controller
         $user->save();
 
         return $user->settings;
+    }
+
+    public function getUserGroups()
+    {
+        $groups = [];
+
+        $user = JWTAuth::parseToken()->authenticate();
+
+        $pivot = DB::table('groups_users_pivot')->where('user_id', $user->id)->get();
+
+        foreach ($pivot as $group) {
+            $groups[] = UserGroup::findOrFail($group->group_id)->toArray();
+        }
+
+        return $this->response->array($groups);
+
     }
 
 
