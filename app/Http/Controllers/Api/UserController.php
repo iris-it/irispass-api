@@ -20,7 +20,7 @@ class UserController extends Controller
         JWT::$leeway = 1000;
 
         $payload = JWT::decode($request->bearerToken(), config('jwt.keys.public'), array('RS256'));
-        
+
         $data = [
             'sub' => $payload->sub,
             'name' => $payload->name,
@@ -28,7 +28,7 @@ class UserController extends Controller
             'given_name' => $payload->given_name,
             'family_name' => $payload->family_name,
             'email' => $payload->email,
-            'resource_access' => json_encode($payload->resource_access->{env('OSJS_CLIENT_ID')}->roles),
+            'resource_access' => json_encode($payload->resource_access),
         ];
 
         $user = User::where('sub', $payload->sub)->first();
