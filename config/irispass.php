@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'user_primary_key' => 'sub',
+    'user_primary_key' => env('USER_PRIMARY_KEY', 'id'),
 
     /*
     |--------------------------------------------------------------------------

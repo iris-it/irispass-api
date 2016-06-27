@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateRelationUsersRoles extends Migration
@@ -14,7 +13,7 @@ class CreateRelationUsersRoles extends Migration
     {
 
         Schema::table('users', function ($table) {
-            $table->integer('role_id')->unsigned()->nullable()->index();
+            $table->integer('role_id')->unsigned()->nullable()->default(3)->index();
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('set null');
         });
     }
