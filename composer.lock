@@ -635,12 +635,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/iris-it/irispass-shared.git",
-                "reference": "8b8f976a39a4a0cfac317c9889094ab10e122076"
+                "reference": "1dec4962190c25de8b5c744228860bcca4778de9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/iris-it/irispass-shared/zipball/8b8f976a39a4a0cfac317c9889094ab10e122076",
-                "reference": "8b8f976a39a4a0cfac317c9889094ab10e122076",
+                "url": "https://api.github.com/repos/iris-it/irispass-shared/zipball/1dec4962190c25de8b5c744228860bcca4778de9",
+                "reference": "1dec4962190c25de8b5c744228860bcca4778de9",
                 "shasum": ""
             },
             "require": {
@@ -669,7 +669,7 @@
                 "source": "https://github.com/iris-it/irispass-shared/tree/master",
                 "issues": "https://github.com/iris-it/irispass-shared/issues"
             },
-            "time": "2016-06-26 17:49:46"
+            "time": "2016-06-27 07:08:50"
         },
         {
             "name": "jakub-onderka/php-console-color",

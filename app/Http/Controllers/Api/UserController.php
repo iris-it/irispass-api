@@ -26,7 +26,6 @@ class UserController extends Controller
             'family_name' => $payload->family_name,
             'email' => $payload->email,
             'resource_access' => json_encode($payload->resource_access),
-
         ];
 
         $user = User::where('sub', $payload->sub)->first();
