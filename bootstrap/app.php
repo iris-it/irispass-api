@@ -11,8 +11,10 @@
 |
 */
 
+use Monolog\Handler\StreamHandler;
+
 $app = new Illuminate\Foundation\Application(
-    realpath(__DIR__.'/../')
+    realpath(__DIR__ . '/../')
 );
 
 /*
@@ -40,6 +42,14 @@ $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
     App\Exceptions\Handler::class
 );
+
+$app->configureMonologUsing(function ($monolog) {
+
+    $errorStreamHandler = new StreamHandler(storage_path("/logs/laravel_debug.log"), $monolog::DEBUG, true);
+    $monolog->pushHandler($errorStreamHandler);
+
+});
+
 
 /*
 |--------------------------------------------------------------------------
