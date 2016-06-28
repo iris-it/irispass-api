@@ -6,15 +6,15 @@ use App\Http\Controllers\Controller;
 use Firebase\JWT\JWT;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 use Irisit\IrispassShared\Model\User;
 use Irisit\IrispassShared\Model\UserGroup;
+use Irisit\IrispassShared\Services\OsjsService;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
 class UserController extends Controller
 {
 
-    public function getCurrentUser(Request $request)
+    public function getCurrentUser(Request $request, OsjsService $osjsService)
     {
 
         JWT::$leeway = 1000;
@@ -36,6 +36,8 @@ class UserController extends Controller
         if (!$user) {
             $this->response->errorUnauthorized('Aucun compte n\'est trouvé');
         }
+
+        $osjsService->createDirectory('user', $payload->sub);
 
         $user->update($data);
 
@@ -69,7 +71,7 @@ class UserController extends Controller
         foreach ($pivot as $group) {
             $groups[] = UserGroup::findOrFail($group->group_id)->toArray();
         }
-        
+
         return $this->response->array($groups);
 
     }
