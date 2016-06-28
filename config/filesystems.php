@@ -48,6 +48,11 @@ return [
             'root' => storage_path('app'),
         ],
 
+        'osjs' => [
+            'driver' => 'local',
+            'root' => env('OSJS_VFS_PATH'),
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
